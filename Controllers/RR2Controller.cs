@@ -16,6 +16,7 @@ namespace ContaCorrente_02.Controllers
         // GET: RR2Controller
         public ActionResult Index()
         {
+
             obj.RecolonizarTabelaClientes();
             obj.RecolonizarTabelaMovimentos();
             return View();
