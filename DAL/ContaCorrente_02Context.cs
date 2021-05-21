@@ -11,5 +11,6 @@ namespace ContaCorrente_02.DAL
     {
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Movimento> Movimentos { get; set; }
+        public DbSet<Login> Logins { get; set; }
     }
 }

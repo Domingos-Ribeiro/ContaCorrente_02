@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+@using (Html.BeginForm())
+{
+<label>Utilizador</label>
+        @Html.TextBox("utilizador")
+<br />
+
+
+
+<label>Senha</label>
+@Html.Password("senha")
+<br />
+<input type="submit" value="OK" />
+}

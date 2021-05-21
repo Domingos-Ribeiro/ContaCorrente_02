@@ -127,7 +127,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\ClientesMovimentosController.cs" />
+    <Compile Include="Controllers\ErroController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\LoginsController.cs" />
+    <Compile Include="Controllers\LogoutController.cs" />
     <Compile Include="Controllers\MovimentoesController.cs" />
     <Compile Include="Controllers\RR2Controller.cs" />
     <Compile Include="DAL\ContaCorrente_02Context.cs" />
@@ -142,11 +147,17 @@
     <Compile Include="Migrations\202105180022345_versao2.Designer.cs">
       <DependentUpon>202105180022345_versao2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105211014599_versaoLogin_1.cs" />
+    <Compile Include="Migrations\202105211014599_versaoLogin_1.Designer.cs">
+      <DependentUpon>202105211014599_versaoLogin_1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Movimento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RR\RRClass.cs" />
+    <Compile Include="ViewModel\ClienteMovimento.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -195,6 +206,15 @@
     <Content Include="Views\Movimentoes\Edit.cshtml" />
     <Content Include="Views\Movimentoes\Index.cshtml" />
     <Content Include="Views\RR2\Index.cshtml" />
+    <Content Include="Views\ClientesMovimentos\Index.cshtml" />
+    <Content Include="Views\Logins\Create.cshtml" />
+    <Content Include="Views\Logins\Delete.cshtml" />
+    <Content Include="Views\Logins\Details.cshtml" />
+    <Content Include="Views\Logins\Edit.cshtml" />
+    <Content Include="Views\Logins\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Logout\Index.cshtml" />
+    <Content Include="Views\Erro\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -218,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105180022345_versao2.resx">
       <DependentUpon>202105180022345_versao2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105211014599_versaoLogin_1.resx">
+      <DependentUpon>202105211014599_versaoLogin_1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

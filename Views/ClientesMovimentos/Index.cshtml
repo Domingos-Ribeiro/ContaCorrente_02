@@ -1,0 +1,17 @@
+﻿
+@model ContaCorrente_02.ViewModel.ClienteMovimento
+
+<h2>Movimentos</h2>
+
+@Html.DropDownList("IdDrop", (SelectList)ViewBag.CLIENTES)
+
+@foreach (var item in Model.Movimentos)
+{
+    @item.DataRegisto
+    <label> | </label>
+    @item.ValorDebito
+    <label> | </label>
+    @item.ValorCredito
+
+    <br />
+}
