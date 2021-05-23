@@ -22,14 +22,14 @@ namespace ContaCorrente_02.Controllers
             //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
             //Possibilitar o envio dos movimentos
-            var vm = new ClienteMovimento();
+            //var vm = new ClienteMovimento();
 
-            vm.Movimentos = db.Movimentos.ToList();
+            //vm.Movimentos = db.Movimentos.ToList();
 
-            ViewBag.CLIENTES = new SelectList(db.Clientes.ToList(), "Id", "NomeCliente");
+            //ViewBag.CLIENTES = new SelectList(db.Clientes.ToList(), "Id", "NomeCliente");
 
 
-            return View(vm);
+            //return View(vm);
             //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
@@ -41,7 +41,21 @@ namespace ContaCorrente_02.Controllers
             //var clientes = db.Clientes.Where(c => c.Id == IdDrop);
 
             //return View(clientes.ToList());
-        }
+
+            //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+            ContaCorrente_02Context db = new ContaCorrente_02Context(); //estanciar a class context, apontador para a base de dados
+
+      
+                var vm = new ClienteMovimento();
+
+
+                ViewBag.CLIENTES = new SelectList(db.Clientes.ToList(), "Id", "NomeCliente");
+
+                vm.Movimentos = db.Movimentos.Where(m => m.ClienteId == IdDrop);
+
+                return View(vm);
+            }
 
     }
 }

@@ -1,29 +1,88 @@
-﻿@model ContaCorrente_02.ViewModel.ClienteMovimento
-
-
-@{
-    ViewBag.Title = "Index";
-}
-
-<h2>Movimentos</h2>
-
-
-@Html.DropDownList("IdDrop", (SelectList)ViewBag.CLIENTES)
-
-
-
-@foreach (var item in Model.Movimentos)
+﻿
+<h2>Lista de clientes e Respetivos Movimentos</h2>
+@using (Html.BeginForm())
 {
-    @item.Descricao
-    <label> | </label>
-    @item.DataRegisto
-    <label> | </label>
-    @item.ValorDebito
-    <label> | </label>
-    @item.ValorCredito
+<table>
+    <tr>
+        <td>
+            @Html.DropDownList("IdDrop", (SelectList)ViewBag.CLIENTES, "Escolha um cliente",
+            htmlAttributes: new { @class = "form-control", @onchange = "this.form.submit();" })
+        </td>
+    </tr>
+</table>}
 
-    <br />
+<table class="table">
+    <tr>
+        <th>Data </th>
+        <th>Descricao</th>
+        <th>Valor Credito</th>
+        <th>Valor Debito</th>
+        <th>Saldo</th>
+    </tr>
+
+    
+
+    @foreach (var item in Model.Movimentos)
+    {
+        var Saldo = item.ValorCredito - item.ValorDebito;
+        <tr>
+            <td>
+                @item.DataRegisto
+            </td>
+
+            <td>
+                @item.Descricao
+            </td>
+
+            <td>
+                @item.ValorCredito
+            </td>
+
+            <td>
+                @item.ValorDebito
+            </td>
+
+            <td>
+                var Saldo
+            </td>
+        </tr>
 }
+
+
+</table>
+
+
+
+
+
+@*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*@
+
+@*@model ContaCorrente_02.ViewModel.ClienteMovimento
+
+
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <h2>Movimentos</h2>
+
+
+    @Html.DropDownList("IdDrop", (SelectList)ViewBag.CLIENTES)
+
+
+
+    @foreach (var item in Model.Movimentos)
+    {
+        @item.Descricao
+        <label> | </label>
+        @item.DataRegisto
+        <label> | </label>
+        @item.ValorDebito
+        <label> | </label>
+        @item.ValorCredito
+
+        <br />
+    }*@
 
 
 
