@@ -1,12 +1,21 @@
-﻿
-@model ContaCorrente_02.ViewModel.ClienteMovimento
+﻿@model ContaCorrente_02.ViewModel.ClienteMovimento
+
+
+@{
+    ViewBag.Title = "Index";
+}
 
 <h2>Movimentos</h2>
 
+
 @Html.DropDownList("IdDrop", (SelectList)ViewBag.CLIENTES)
+
+
 
 @foreach (var item in Model.Movimentos)
 {
+    @item.Descricao
+    <label> | </label>
     @item.DataRegisto
     <label> | </label>
     @item.ValorDebito
@@ -15,3 +24,38 @@
 
     <br />
 }
+
+
+
+@*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*@
+
+
+
+@*<br />
+    <h3><p>Lista de clientes e Respetivos Movimentos</p></h3>
+    <br />
+    @model IEnumerable<ContaCorrente_02.Models.Cliente>
+
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DropDownList("idDrop",
+        (SelectList)ViewBag.LISTA, "Selecionar Cliente",
+        htmlAttributes: new { @class = "form-control", @onchange = "this.form.submit();" })
+            </th>
+
+            @foreach (var item in Model)
+            {
+                @Html.DisplayNameFor(model => model.NomeCliente)
+
+                @Html.DisplayNameFor(model => model.Movimentos)
+
+            }
+
+
+
+        </tr>
+    </table>*@
+
+

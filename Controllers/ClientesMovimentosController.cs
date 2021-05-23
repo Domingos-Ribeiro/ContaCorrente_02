@@ -14,17 +14,33 @@ namespace ContaCorrente_02.Controllers
 {
     public class ClientesMovimentosController : Controller
     {
-        ContaCorrente_02Context db = new ContaCorrente_02Context();
+        private ContaCorrente_02Context db = new ContaCorrente_02Context();
         public ActionResult Index(int? IdDrop)
         {
-            // Possibilitar o envio dos movimentos
+
+
+            //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+            //Possibilitar o envio dos movimentos
             var vm = new ClienteMovimento();
+
             vm.Movimentos = db.Movimentos.ToList();
 
             ViewBag.CLIENTES = new SelectList(db.Clientes.ToList(), "Id", "NomeCliente");
 
 
             return View(vm);
+            //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
+            //List<Cliente> listaClientes = db.Clientes.ToList();
+            //SelectList SL = new SelectList(listaClientes, "Id", "NomeCliente");
+            //ViewBag.LISTA = SL;
+
+            //var clientes = db.Clientes.Where(c => c.Id == IdDrop);
+
+            //return View(clientes.ToList());
         }
 
     }
