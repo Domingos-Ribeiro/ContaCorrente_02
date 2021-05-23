@@ -20,38 +20,34 @@
         <th>Saldo</th>
     </tr>
 
-    
+
 
     @foreach (var item in Model.Movimentos)
     {
-        var Saldo = item.ValorCredito - item.ValorDebito;
-        <tr>
-            <td>
-                @item.DataRegisto
-            </td>
+  
+<tr>
+    <td>
+        @item.DataRegisto
+    </td>
 
-            <td>
-                @item.Descricao
-            </td>
+    <td>
+        @item.Descricao
+    </td>
 
-            <td>
-                @item.ValorCredito
-            </td>
+    <td>
+        @item.ValorCredito
+    </td>
 
-            <td>
-                @item.ValorDebito
-            </td>
+    <td>
+        @item.ValorDebito
+    </td>
 
-            <td>
-                var Saldo
-            </td>
-        </tr>
+
+</tr>
 }
 
 
 </table>
-
-
 
 
 
