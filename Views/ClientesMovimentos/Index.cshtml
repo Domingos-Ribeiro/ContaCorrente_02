@@ -24,28 +24,39 @@
 
     @foreach (var item in Model.Movimentos)
     {
-  
-<tr>
-    <td>
-        @item.DataRegisto
-    </td>
 
-    <td>
-        @item.Descricao
-    </td>
+        <tr>
+            <td>
+                @item.DataRegisto
+            </td>
 
-    <td>
-        @item.ValorCredito
-    </td>
+            <td>
+                @item.Descricao
+            </td>
 
-    <td>
-        @item.ValorDebito
-    </td>
+            <td>
+                @item.ValorCredito
+            </td>
 
+            <td>
+                @item.ValorDebito
+            </td>
 
-</tr>
-}
+            <td>
+                @if (@item.ValorCredito > 0)
+                {
+                <p>+@item.ValorCredito</p>
+                }
+                else
+                {
+                <p>-@item.ValorDebito</p>
+                }
 
+            </td>
+
+        </tr>
+    }
+ 
 
 </table>
 

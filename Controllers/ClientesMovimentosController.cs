@@ -52,9 +52,10 @@ namespace ContaCorrente_02.Controllers
 
                 ViewBag.CLIENTES = new SelectList(db.Clientes.ToList(), "Id", "NomeCliente");
 
-                vm.Movimentos = db.Movimentos.Where(m => m.ClienteId == IdDrop);
+             vm.Movimentos = db.Movimentos.Where(m => m.ClienteId == IdDrop);
+           
 
-                return View(vm);
+            return View(vm);
             }
 
     }
