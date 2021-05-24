@@ -26,6 +26,11 @@
         <th>
             @Html.DisplayNameFor(model => model.ValorCredito)
         </th>
+
+        <th>
+            <p>Saldo</p>
+        </th>
+
         <th></th>
     </tr>
 
@@ -47,10 +52,22 @@
             @Html.DisplayFor(modelItem => item.ValorCredito)
         </td>
         <td>
+            @{
+                double saldo = -Convert.ToDouble(item.ValorDebito) + Convert.ToDouble(item.ValorCredito);
+            }
+
+            @saldo
+
+            
+
+        </td>
+        <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
+
+        
     </tr>
 }
 
