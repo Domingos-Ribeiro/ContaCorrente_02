@@ -20,6 +20,7 @@ namespace ContaCorrente_02.Controllers
             obj.RecolonizarTabelaClientes();
             obj.RecolonizarTabelaMovimentos();
             return View();
+
         }
     }
 

@@ -58,7 +58,89 @@
 
             @saldo
 
-            
+
+
+            @* *************************************  Código copiado e colado do Appkcc  ****************************************** *@
+
+            @*// =====================  Método para calcular o saldo de cada Cliente  ===================== //
+            void CalcularSaldo()
+            {
+            int tamanho = dataGridView1.Rows.Count;
+            int debito = 0;
+            int credito = 0;
+            int saldoTotal = 0;
+
+            for (int i = 0; i < tamanho; i++)
+            {
+            // Como alguns dados estarão vazios (credito ou debito) é necessário
+            // Colocar o try Catch
+            try
+            {
+            debito = Convert.ToInt32(dataGridView1.Rows[i].Cells[3].Value);
+            }
+            catch (Exception)
+            {
+            debito = 0;
+            }
+
+            try
+            {
+            credito = Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value);
+            }
+            catch (Exception)
+            {
+            credito = 0;
+            }
+
+            saldoTotal = saldoTotal + credito - debito;
+            dataGridView1.Rows[i].Cells[6].Value = saldoTotal;
+            }
+
+            }
+            // =========================== FIM do Método para calcular saldo  =========================== //*@
+
+
+
+
+            @*// ==================  Método para calcular os Totais de DÉBITO e CRÉDITO  ================== //
+        void CalcularTotaisDebitoCredito()
+        {
+        double debito = 0;
+        double credito = 0;
+        double totalDebitos = 0;
+        double totalCreditos = 0;
+        int totalLinhas = dataGridView1.Rows.Count;
+
+
+        for (int i = 0; i < totalLinhas; i++)
+        {
+        try
+        {
+        debito = Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value);
+        totalDebitos = totalDebitos + debito;
+        }
+        catch { }
+        try
+        {
+        credito = Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value);
+        totalCreditos = totalCreditos + credito;
+        }
+        catch { }
+        }*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         </td>
         <td>
